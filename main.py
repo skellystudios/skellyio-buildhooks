@@ -3,7 +3,7 @@ from subprocess import call
 
 app = Flask(__name__)
 
-@app.route('/update_jekyll', methods=['POST']):
+@app.route('/update_jekyll', methods=['POST'])
 def update_jekyll():
 	try:
 		skelly_io_dir = "/var/www/skelly-io"
