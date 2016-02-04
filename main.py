@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/update_jekyll', methods=['POST'])
 def update_jekyll():
 	try:
-		skelly_io_dir = "/var/www/skelly-io"
+		skelly_io_dir = "/var/www/skelly-io/skellyio-jekyll"
 		call(["git", "pull"], cwd=skelly_io_dir)
 		call(["jekyll", "build"], cwd=skelly_io_dir)
 	except:
