@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import abort
 from subprocess import call
 
 app = Flask(__name__)
@@ -10,7 +11,7 @@ def update_jekyll():
 		call(["git", "pull"], cwd=skelly_io_dir)
 		call(["jekyll", "build"], cwd=skelly_io_dir)
 	except:
-		pass
+	        abort(500)	
 	return 'ok'
 
 if __name__ == '__main__':
