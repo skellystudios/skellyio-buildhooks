@@ -11,8 +11,13 @@ def update_jekyll():
 		call(["git", "pull"], cwd=skelly_io_dir)
 		call(["jekyll", "build"], cwd=skelly_io_dir)
 	except:
-	        abort(500)	
+	        abort(500)
 	return 'ok'
+
+
+@app.route('/status', methods=['POST'])
+def status():
+	return "success"
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0')
